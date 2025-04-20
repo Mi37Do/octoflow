@@ -1,0 +1,96 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-bg: #f1f5f9;
+
+  --vt-c-black: #161a1d;
+  --vt-c-black-bg: #1d2125;
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-w-border: #e2e8f0;
+  --vt-b-border: #323234;
+
+  --v-slate-50: #f8fafc;
+  --v-slate-100: #f1f5f9;
+  --v-slate-200: #e2e8f0;
+  --v-slate-500: #64748b;
+  --v-slate-600: #475569;
+  --v-slate-700: #334155;
+
+  --vt-c-primary-1: #4563ff;
+  --vt-c-primary-2: #3345a4;
+
+  --vt-c-primary-red-1: #ef4444;
+  --vt-c-primary-red-2: #dc2626;
+
+  --vt-w-primary-shadow: rgba(143, 126, 231, 0.6);
+  --vt-b-primary-shadow: rgba(226, 232, 240, 0.6);
+
+  --vt-w-loading-border: #cbd5e1;
+  --vt-w-loading: #94a3b8;
+
+  --vt-b-loading-border: #cbd5e1;
+  --vt-b-loading: #e2e8f0;
+
+  --vt-c-text-light-1: #334155;
+
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: #f8fbfc;
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--vt-c-white-bg);
+  --color-bg-side: var(--vt-c-white);
+  --color-border: var(--vt-c-divider-light-2);
+  --color-commun-border: var(--vt-w-border);
+  --color-btn-primary: var(--vt-w-primary-btn);
+
+  --vt-primary-1: var(--vt-c-primary-1);
+  --vt-primary-2: var(--vt-c-primary-2);
+
+  --vt-primary-red-1: var(--vt-c-primary-red-1);
+  --vt-primary-red-2: var(--vt-c-primary-red-2);
+
+  --vt-loading: var(--vt-w-loading);
+
+  --vt-loading-border: var(--vt-w-loading-border);
+
+  --btn-float: var(--v-slate-600);
+  --btn-float-hover: var(--v-slate-700);
+
+  --vt-primary-shadow: var(--vt-w-primary-shadow);
+
+  --btn-disabled: var(--v-slate-200);
+  --btn-ghost-hover: var(--v-slate-50);
+
+  --color-text: var(--vt-c-text-light-1);
+  --color-primary-text: var(--vt-c-white);
+}
+
+.dark {
+  --color-background: var(--vt-c-black);
+
+  --color-bg-side: var(--vt-c-black-bg);
+  --color-commun-border: var(--vt-b-border);
+
+  --vt-loading: var(--vt-b-loading);
+  --vt-loading-border: var(--vt-b-loading-border);
+
+  --vt-primary-1: #ffffff;
+  --vt-primary-2: #ffffff;
+  --color-primary-text: var(--vt-c-black);
+
+  --vt-primary-shadow: var(--vt-b-primary-shadow);
+
+  --btn-disabled: #2a2d30;
+
+  --btn-ghost-hover: var(--vt-c-black);
+  --btn-float: var(--v-slate-100);
+  --btn-float-hover: var(--v-slate-50);
+
+  --color-border: var(--vt-c-divider-dark-2);
+  --color-btn-primary: var(--vt-c-white);
+  --color-text: var(--vt-c-text-dark-2);
+}
