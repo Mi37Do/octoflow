@@ -65,6 +65,13 @@
     "order": "order",
     "file": "file",
     "fileNotFound": "file not found",
-    "download": "download"
+    "download": "download",
+    "user": "user",
+    "company": "company",
+    "unit_price": "unit price",
+    "units": "units",
+    "total_price": "total price",
+    "create": "create",
+    "total": "total"
   }
 }

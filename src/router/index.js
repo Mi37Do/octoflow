@@ -3,6 +3,7 @@ import productsRoutes from './products'
 import { useAuthStore } from '@/stores/auth'
 import administraitonRoutes from './administration'
 import receivablesRoutes from './receivables'
+import ordersRoutes from './orders'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +51,8 @@ const router = createRouter({
             module: ['orders'],
           },
           component: () => import('../views/pages/ordersView.vue'),
+          redirect: { name: 'orders-list-view' },
+          children: ordersRoutes,
         },
         {
           path: 'receivables',

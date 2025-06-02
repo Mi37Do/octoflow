@@ -4,7 +4,8 @@
       <!-- Resizable Div -->
       <div class="flex shrink-0 overflow-hidden px-3 items-center h-full" :style="{ flex: `${divWidths[index]} 0 0%` }"
         ref="divElements">
-        <span class="truncate capitalize font-medium text-[var(--btn-float)]">{{ t(`translation.${column.designation}`)
+        <span class="truncate uppercase text-[var(--btn-float)] font-semibold">{{
+          t(`translation.${column.designation}`)
           }}</span>
       </div>
 

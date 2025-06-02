@@ -21,7 +21,7 @@ const useWidget = useWidgetStore()
 const useProduct = useProductStore()
 
 const openOptions = (item) => {
-  useProduct.focusedPacking = item
+  useProduct.focusedColor = item
   useWidget.openTypeOptions = true
 }
 

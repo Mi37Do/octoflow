@@ -54,7 +54,7 @@
                       <span class="text-xs uppercase ">{{ t('translation.packing') }}</span>
                       <CommunCombobox :list="useProduct.packings" :selected="itemToAdd.conditionement"
                         @on-selected-item="(id) => {
-                          itemToAdd.packings = id
+                          itemToAdd.conditionement = id
                         }" />
                     </div>
 
@@ -77,7 +77,7 @@
 
 
                     <div class="flex flex-col gap-1.5 w-full  sm:w-80">
-                      <span class="text-xs uppercase ">{{ t('translation.designation') }}</span>
+                      <span class="text-xs uppercase ">{{ t('translation.public_price') }}</span>
                       <input type="number" class="input" required v-model="itemToAdd.public_price">
                     </div>
                   </div>

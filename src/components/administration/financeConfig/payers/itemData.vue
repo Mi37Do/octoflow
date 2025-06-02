@@ -26,6 +26,7 @@ import { useWidgetStore } from '@/stores/widget';
 import { format } from 'date-fns';
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+
 const props = defineProps(['item', 'divsWidths'])
 
 const useWidget = useWidgetStore()

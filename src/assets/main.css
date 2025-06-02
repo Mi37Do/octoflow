@@ -308,6 +308,15 @@ body {
   line-height: 1.15rem;
 }
 
+.hidden-scrollbar {
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .bg-glass-effect {
   background: color-mix(in srgb, var(--color-bg-side) 40%, transparent);
   border-radius: 16px;
@@ -401,7 +410,7 @@ body {
   @apply text-[0.65rem] uppercase;
 }
 .tag {
-  @apply px-1.5 py-1 rounded-lg;
+  @apply px-1.5 pb-1 pt-1.5 rounded-lg;
 }
 
 input::-webkit-outer-spin-button,
