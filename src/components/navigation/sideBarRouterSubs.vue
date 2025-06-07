@@ -52,7 +52,7 @@ watch(() => route.meta.module, (newModule) => {
   // Check if the current route's module matches the item
   isSelected.value = newModule.includes(props.item.name);
   // If it matches, open the submenu; otherwise, close it
-  isOpen.value = isSelected.value;
+  isOpen.value = isSelected.value && useWidget.openSide ? true : false;
 });
 
 watch(() => useWidget.openSide, () => {

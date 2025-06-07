@@ -1,4 +1,4 @@
-import { ref, computed, reactive } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import { defineStore } from 'pinia'
 import { useI18n } from 'vue-i18n'
 
@@ -7,6 +7,18 @@ export const useWidgetStore = defineStore('widget', () => {
   const sheet = ref(false)
   const openSide = ref(false)
   const themeState = ref('light')
+  const imageCropper = ref(false)
+  const clientTypeModal = ref(false)
+  const { t } = useI18n()
+
+  const regionIds = ['EST', 'OUEST', 'CENTRE', 'SUD']
+
+  const regions = computed(() =>
+    regionIds.map((id) => ({
+      id,
+      designation: t(`translation.regions.${id}`),
+    })),
+  )
 
   const currentModule = ref('')
 
@@ -23,6 +35,9 @@ export const useWidgetStore = defineStore('widget', () => {
     open: false,
   })
 
+  //users
+  const openClientOptions = ref(false)
+
   const userLanguage = ref('en')
   const { locale } = useI18n()
 
@@ -32,8 +47,8 @@ export const useWidgetStore = defineStore('widget', () => {
 
   const toggleLanguage = () => {
     const activeLanguage = localStorage.getItem('user-language')
-    if (activeLanguage === 'ar') setLanguage('fr')
-    else if (activeLanguage === 'ar') setLanguage('fr')
+    if (activeLanguage === 'en') setLanguage('en')
+    else if (activeLanguage === 'fr') setLanguage('fr')
     else setLanguage('ar')
   }
 
@@ -61,5 +76,9 @@ export const useWidgetStore = defineStore('widget', () => {
     addEditType,
     deleteModal,
     currentModule,
+    imageCropper,
+    regions,
+    clientTypeModal,
+    openClientOptions,
   }
 })

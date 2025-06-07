@@ -2,6 +2,42 @@ import payersRoutes from './administration/payers/payers'
 
 const administraitonRoutes = [
   {
+    path: 'users-management',
+    name: 'administration-usersManagement-view',
+    meta: {
+      hasSubLinks: false,
+      module: ['administration', 'users Management'],
+    },
+    component: () => import('@/views/administration/usersManagementView.vue'),
+  },
+  {
+    path: 'clients-management',
+    name: 'administration-clientsManagement-view',
+    meta: {
+      hasSubLinks: false,
+      module: ['administration', 'clients Management'],
+    },
+    component: () => import('@/views/administration/clientsManagementView.vue'),
+  },
+  {
+    path: 'add-client/:type',
+    name: 'administration-addClient-view',
+    meta: {
+      hasSubLinks: false,
+      module: ['administration', 'add client'],
+    },
+    component: () => import('@/views/administration/addEditClientView.vue'),
+  },
+  {
+    path: 'edit-client/:id',
+    name: 'administration-editClient-view',
+    meta: {
+      hasSubLinks: false,
+      module: ['administration', 'edit client'],
+    },
+    component: () => import('@/views/administration/addEditClientView.vue'),
+  },
+  {
     path: 'users-config',
     name: 'administration-usersConfig-view',
     meta: {

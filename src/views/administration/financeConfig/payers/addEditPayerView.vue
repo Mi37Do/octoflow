@@ -4,11 +4,15 @@
   <div v-else class="w-full h-full flex justify-center px-3">
 
     <form @submit.prevent="addEditItem" class="w-full max-w-screen-sm h-full flex flex-col">
-      <div class="w-full h-fit p-3 flex items-center justify-between">
-        <button type="button" class="btn btn-square btn-nofloat">
-          <ChevronLeft class="w-4" />
-        </button>
-        <span class="pixa-title">
+      <div class="w-full h-14 p-3 flex items-center justify-between">
+
+        <router-link :to="{ name: 'administration-config-payers-view' }"
+          class="flex gap-3 items-center hover:text-[var(--vt-primary-1)] absolute capitalize">
+          <ChevronLeft class="w-3" />
+          <span>
+            {{ t('translation.payers') }}</span>
+        </router-link>
+        <span class="pixa-title text-center w-full">
           <span v-if="route.name === 'administration-config-payers-edit-view'">
             {{ t('translation.edit') }}
           </span>

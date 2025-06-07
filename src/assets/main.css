@@ -439,3 +439,7 @@ input::-webkit-inner-spin-button {
   border: 3px solid transparent;
   background-clip: content-box;
 }
+
+.bg-10-percent {
+  @apply bg-[var(--vt-primary-1)] opacity-10;
+}

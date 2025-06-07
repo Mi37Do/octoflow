@@ -79,6 +79,18 @@ const routes = ref(
         {
           title: '',
           links: [
+            { id: 1, name: 'usersManagement' }
+          ]
+        },
+        {
+          title: '',
+          links: [
+            { id: 1, name: 'clientsManagement' }
+          ]
+        },
+        {
+          title: '',
+          links: [
             { id: 1, name: 'usersConfig' }
           ]
         }, {

@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { ref, computed, reactive } from 'vue'
 import { defineStore } from 'pinia'
 import axios from 'axios'
 
@@ -13,9 +13,40 @@ export const useAdministrationStore = defineStore('administration', () => {
   const focusedBank = ref(null)
   const payers = ref([])
   const focusedPayer = ref(null)
+  const users = ref([])
+  const focusedUser = ref(null)
+
+  const cities = ref([])
+  const focusedCity = ref('')
 
   const roles = ref([])
   const focusedRole = ref(null)
+
+  const costumUser = reactive({
+    name: '',
+    first_name: '',
+    last_name: '',
+    type: null,
+    region: 'OUEST',
+    logo: null,
+    siteweb: '',
+    telephone: '',
+    email: '',
+    photo: '',
+    password: '123456',
+    nif: '',
+    nis: '',
+    art: '',
+    rc: '',
+    bp: '',
+    long: 0,
+    lat: 0,
+    objectif_a: 0,
+    objectif_m: 0,
+    plafonnement: 0,
+    ville: null,
+    manager: null,
+  })
 
   const getSpecialities = async (id) => {
     if (id) {
@@ -72,14 +103,33 @@ export const useAdministrationStore = defineStore('administration', () => {
     }
   }
 
+  const getUsers = async (id) => {
+    if (id) {
+      let response = await axios.get(`/api/CustomUser/${id}/`)
+      focusedUser.value = response.data
+    } else {
+      let response = await axios.get(`/api/CustomUser/`)
+      users.value = response.data
+    }
+  }
+
+  const getCities = async (id) => {
+    if (id) {
+      let response = await axios.get(`/api/ville/${id}/`)
+      focusedCity.value = response.data
+    } else {
+      let response = await axios.get(`/api/ville/`)
+      cities.value = response.data
+      localStorage.setItem('cities', JSON.stringify(cities.value))
+    }
+  }
+
   const getConfigs = async () => {
     await getSpecialities()
-
     await getDepartements()
-
     await getBanks()
-
     await getPayers()
+    await getCities()
   }
 
   return {
@@ -99,5 +149,12 @@ export const useAdministrationStore = defineStore('administration', () => {
     getRoles,
     roles,
     focusedRole,
+    getUsers,
+    users,
+    focusedUser,
+    costumUser,
+    cities,
+    getCities,
+    focusedCity,
   }
 })

@@ -35,6 +35,7 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   const login = async (username, password) => {
+    axios.defaults.headers.common['Authorization'] = ''
     try {
       let response = await axios.post('/api/Login/', {
         username: username,
