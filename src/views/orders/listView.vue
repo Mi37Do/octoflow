@@ -30,7 +30,6 @@
           </div>
         </div>
 
-
         <commun-table v-if="useOrder.orders.length > 0" :columns="columns" :footer="true" @divsWidths="(values) => {
           divsWidths = values
         }">
@@ -113,9 +112,6 @@ const onDeleteItem = async (id) => {
   try {
     let response = await axios.delete(`/api/Commande/${id}/`)
     await useOrder.getOrders()
-
-    console.log(useProduct.products)
-
 
     Object.assign(useWidget.deleteModal, {
       open: false,

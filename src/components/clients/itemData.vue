@@ -55,7 +55,7 @@
 
         <span v-if="tab === 'legal'" class="truncate font-medium"> {{ item.nis || 'N/A' }}</span>
 
-        <span v-else :class="item.is_active ? 'bg-emerald-400  dark:bg-emerald-600' :
+        <span v-else :class="item.is_active ? 'bg-emerald-500 ' :
           'bg-red-500'" class="truncate tag text-white text-tag">{{
             item.is_active ? 'active' : 'inactive' }}</span>
       </div>

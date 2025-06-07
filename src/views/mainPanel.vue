@@ -22,9 +22,9 @@
 import sheet from '@/components/commun/sheet.vue'
 import topAppBar from '@/components/navigation/topAppBar.vue';
 import { useWidgetStore } from "@/stores/widget";
-import { ref, watch } from 'vue';
+import { ref, watchEffect } from 'vue';
 import sideBar from '@/components/navigation/sideBar.vue';
-import { useDark, useToggle, useStorage } from '@vueuse/core'
+import { useDark, useToggle } from '@vueuse/core'
 
 const useWidget = useWidgetStore()
 const isDark = useDark({
@@ -38,7 +38,7 @@ const scaleIt = ref(false)
 
 const toggleTheme = useToggle(isDark)
 
-watch(() => useWidget.sheet, () => {
+watchEffect(() => {
   if (useWidget.sheet) {
     scaleIt.value = true
   } else {
