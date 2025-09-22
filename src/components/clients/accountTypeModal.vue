@@ -25,7 +25,7 @@
               </div>
 
               <div class="w-full grid grid-cols-3 gap-3 mt-6">
-                <router-link :to="{ name: 'administration-addClient-view', params: { type: type.id } }"
+                <router-link :to="{ name: 'administration-add-client-view', params: { type: type.id } }"
                   v-for="type in types" :key="type.id"
                   class="w-48 h-48 card flex flex-col gap-3 items-center justify-center hover:text-[var(--vt-primary-2)] cursor-pointer">
 

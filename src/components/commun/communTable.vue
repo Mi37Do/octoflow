@@ -7,7 +7,7 @@
       <div class="flex-1 h-full  overflow-hidden flex flex-col">
         <div class="w-full h-16 px-3 pt-3">
           <div class="w-full h-full bg-[var(--color-background)] rounded-lg  py-2">
-            <resizable-container :columns="columns" @divsWidths="(values) => {
+            <TableHeader :columns="columns" @divsWidths="(values) => {
               divsWidths = values
               emits('divsWidths', divsWidths)
             }" />
@@ -35,6 +35,7 @@
 import { ref } from 'vue';
 import resizableContainer from './resizableContainer.vue';
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next';
+import TableHeader from '../ui/table/tableHeader.vue';
 const props = defineProps(['columns', 'footer', 'hasTableConfig'])
 const divsWidths = ref([])
 const emits = defineEmits(['divsWidths'])

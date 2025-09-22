@@ -67,6 +67,7 @@
 
   --color-text: var(--vt-c-text-light-1);
   --color-primary-text: var(--vt-c-white);
+  --color-lighter-text: var(--vt-c-text-light-1);
 }
 
 .dark {
@@ -93,4 +94,5 @@
   --color-border: var(--vt-c-divider-dark-2);
   --color-btn-primary: var(--vt-c-white);
   --color-text: var(--vt-c-text-dark-2);
+  --color-lighter-text: var(--vt-c-text-dark-2);
 }

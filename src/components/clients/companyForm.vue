@@ -105,17 +105,18 @@ import { useI18n } from "vue-i18n";
 import communCombobox from "../commun/communCombobox.vue";
 import axios from "axios";
 import { useRoute, useRouter } from "vue-router";
+import { useAuthStore } from "@/stores/auth";
+import { storeToRefs } from "pinia";
 
 const props = defineProps(['tab', 'list'])
 const route = useRoute()
 const emits = defineEmits(['ChangeTab'])
 const { t } = useI18n()
 const useAdministration = useAdministrationStore()
+const { authUser } = storeToRefs(useAuthStore())
 const useWidget = useWidgetStore()
 const router = useRouter()
 const loadingAdd = ref(false)
-
-console.log(useAdministration.costumUser);
 
 
 const filtredCities = computed(() => {
@@ -127,9 +128,17 @@ const addEditItem = async (status) => {
     loadingAdd.value = true
     try {
       //to delete later
-      delete useAdministration.costumUser.photo
+      //delete useAdministration.costumUser.photo
 
-      if (route.name === 'administration-addClient-view') {
+      if (route.name === 'administration-add-client-view') {
+
+        if (authUser.value.details.type === 'ROOT') {
+          useAdministration.costumUser.manager =
+            authUser.value.details.id
+        } else {
+          useAdministration.costumUser.manager = authUser.value.details.manager
+        }
+
         useAdministration.costumUser.type = route.params.type
         let response = await axios.post(`/api/CustomUser/`, useAdministration.costumUser)
         router.push({ name: 'administration-clientsManagement-view' })

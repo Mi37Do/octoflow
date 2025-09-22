@@ -6,9 +6,11 @@ export const useWidgetStore = defineStore('widget', () => {
   const isMobile = ref(false)
   const sheet = ref(false)
   const openSide = ref(false)
+  const communRoutes = ref([])
   const themeState = ref('light')
   const imageCropper = ref(false)
   const clientTypeModal = ref(false)
+  const mapModal = ref(false)
   const { t } = useI18n()
 
   const regionIds = ['EST', 'OUEST', 'CENTRE', 'SUD']
@@ -80,5 +82,7 @@ export const useWidgetStore = defineStore('widget', () => {
     regions,
     clientTypeModal,
     openClientOptions,
+    mapModal,
+    communRoutes,
   }
 })

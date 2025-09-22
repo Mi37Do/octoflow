@@ -8,295 +8,6 @@
   src: url('@/assets/fonts/Inter.ttf');
 }
 
-/*
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  width: 0px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #cfd9f6;
-  border-color: var(--color-background);
-  border-width: 20px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #cbd5e1;
-}
-
-.btn-disabled {
-  color: #cfd9f6;
-  fill: #9398a8;
-  cursor: not-allowed;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-#app {
-  font-family: inter;
-  font-size: 0.8rem;
-  font-weight: 400;
-  line-height: 1.15rem;
-  color: #475569;
-}
-
-.btn {
-  font-size: 0.6rem;
-  font-weight: 500;
-  line-height: 1.15rem;
-  text-transform: uppercase;
-}
-
-.pixa-card {
-  background-color: #fff;
-  outline-width: 1px;
-  outline-color: #e2e8f0;
-}
-
-.text-tag {
-  font-size: 0.6rem;
-}
-
-.btn-primary {
-  color: #fff;
-  fill: #fff;
-  background-image: linear-gradient(to bottom right, #475569, #1e293b);
-  box-shadow: 0 25px 50px -12px rgba(48, 75, 178, 0.4);
-}
-
-.pixa-btn {
-  height: 2.5rem;
-  border-radius: 0.75rem;
-  font-size: 0.7rem;
-}
-
-.btn-ghost {
-  fill: #577399;
-  color: #577399;
-  text-transform: uppercase;
-}
-
-.btn-sm-small {
-  border-radius: 0.5rem;
-}
-
-.btn-ghost:hover {
-  background-color: #f1f5f9;
-}
-
-input[type='number'] {
-  -moz-appearance: textfield;
-}
-
-.bg-glass-effect {
-  background: rgba(255, 255, 255, 0);
-  backdrop-filter: blur(13.4px);
-  -webkit-backdrop-filter: blur(13.4px);
-}
-
-.pixa-btn-float {
-  background-color: white;
-  border-width: 1px;
-  fill: #577399;
-
-  color: #577399;
-  border-color: #e2e8f0;
-  box-shadow: 0 25px 50px -12px rgba(48, 75, 178, 0.2);
-}
-
-.pixa-btn-float:hover {
-  background-color: white;
-  fill: #1e293b;
-  color: #1e293b;
-  border-width: 1px;
-  border-color: #94a3b8;
-}
-
-.pixa-btn-nofloat {
-  background-color: white;
-  border-width: 1px;
-  fill: #475569;
-
-  color: #475569;
-  border-color: #e2e8f0;
-}
-
-.pixa-btn-nofloat:hover {
-  background-color: white;
-  fill: #1e293b;
-  color: #1e293b;
-  border-width: 1px;
-  border-color: #94a3b8;
-}
-
-.pixa-input {
-  display: block;
-  border-width: 1px;
-  height: 2.5rem;
-  border-radius: 0.75rem;
-  outline-width: 0px;
-  font-size: small;
-  border-color: #e2e8f0;
-  background-color: #ffffff;
-}
-
-.pixa-input-float {
-  display: block;
-  border-width: 1px;
-  height: 2.5rem;
-  border-radius: 0.75rem;
-  outline-width: 0px;
-  font-size: small;
-  border-color: #e2e8f0;
-  box-shadow: 0 25px 50px -12px rgba(41, 98, 255, 0.2);
-}
-
-.pixa-input:focus {
-  display: block;
-  border-width: 1px;
-  border-color: #94a3b8;
-  box-shadow: 0 25px 50px -12px rgba(41, 98, 255, 0.1);
-}
-
-.pixa-menu-btn:hover {
-  fill: #1e293b;
-  color: #1e293b;
-}
-
-.pixa-menu-btn-delete:hover {
-  fill: #ef4444;
-  color: #ef4444;
-  background-color: #fee2e2;
-}
-
-.vc-calendar-color {
-  --vc-accent-50: rgba(41, 98, 255, 0.05);
-  --vc-accent-100: rgba(41, 98, 255, 0.1);
-  --vc-accent-200: rgba(41, 98, 255, 0.2);
-  --vc-accent-300: rgba(41, 98, 255, 0.3);
-  --vc-accent-400: rgba(41, 98, 255, 0.4);
-  --vc-accent-500: rgba(41, 98, 255, 0.5);
-
-  --vc-accent-600: rgba(41, 98, 255, 1);
-
-  --vc-accent-700: rgba(41, 98, 255, 0.7);
-  --vc-accent-800: rgba(41, 98, 255, 0.8);
-  --vc-accent-900: rgba(41, 98, 255, 0.9);
-}
-
-.pixa-title {
-  font-size: 1rem;
-  line-height: 1rem;
-  font-weight: 700;
-  color: #1e293b;
-  text-transform: uppercase;
-}
-
-.pixa-textarea {
-  display: block;
-  border-width: 1px;
-  border-radius: 0.75rem;
-  padding: 12px;
-  outline-width: 0px;
-  font-size: small;
-  border-color: #e2e8f0;
-  background-color: #ffffff;
-}
-
-.pixa-tag {
-  text-transform: uppercase;
-  font-size: 0.7rem;
-}
-
-.bg-glass-effect {
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(11.8px);
-  -webkit-backdrop-filter: blur(11.8px);
-  border: 1px solid rgba(255, 255, 255, 1);
-}
-
-.option-false {
-  background: #e2e8f0;
-  fill: #64748b;
-  color: #64748b;
-}
-
-.option-false:hover {
-  background-color: #cbd5e1;
-}
-
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.slider-blue {
-  --slider-connect-bg: #1e293b;
-  --slider-tooltip-bg: #1e293b;
-  --slider-handle-ring-color: #1e293b 30;
-}
-
-.ag-theme-quartz {
-  --ag-foreground-color: rgb(126, 46, 132);
-  --ag-background-color: rgb(249, 245, 227);
-  --ag-header-foreground-color: rgb(204, 245, 172);
-  --ag-header-background-color: rgb(209, 64, 129);
-  --ag-odd-row-background-color: rgb(0, 0, 0, 0.03);
-  --ag-header-column-resize-handle-color: rgb(126, 46, 132);
-
-  --ag-font-family: cairo;
-}
-
-.red-btn-ghost {
-  fill: #dc2626;
-  background-color: transparent;
-  border: 0px;
-  color: #dc2626;
-  text-transform: uppercase;
-  box-shadow: none;
-}
-
-.red-btn-ghost:hover {
-  background-color: #fee2e2;
-}
-
-.hidden-scrollbar {
-  overflow: auto;
-  scrollbar-width: none;
-}
-
-.hidden-scrollbar::-webkit-scrollbar {
-  display: none;
-}*/
-
 body {
   @apply bg-[var(--color-background)] text-[var(--color-text)];
 }
@@ -318,9 +29,9 @@ body {
 }
 
 .bg-glass-effect {
-  background: color-mix(in srgb, var(--color-bg-side) 40%, transparent);
+  background: color-mix(in srgb, var(--color-bg-side) 50%, transparent);
   border-radius: 16px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(11.8px);
   -webkit-backdrop-filter: blur(11.8px);
   border: 1px solid var(--color-commun-border);
@@ -344,6 +55,10 @@ body {
 
 .btn-nofloat {
   @apply bg-[var(--color-bg-side)] border border-[var(--color-commun-border)] text-[var(--btn-float)] fill-[var(--btn-float)];
+}
+
+.btn-nofloat-red {
+  @apply bg-[var(--color-bg-side)] border border-[var(--color-commun-border)] text-[var(--vt-primary-red-1)] fill-[var(--vt-primary-red-1)];
 }
 
 .btn-float:hover {
@@ -406,6 +121,9 @@ body {
   @apply text-lg font-semibold uppercase;
 }
 
+.pixa-title-2 {
+  @apply font-medium uppercase;
+}
 .text-tag {
   @apply text-[0.65rem] uppercase;
 }
@@ -442,4 +160,25 @@ input::-webkit-inner-spin-button {
 
 .bg-10-percent {
   @apply bg-[var(--vt-primary-1)] opacity-10;
+}
+
+/* in your <style scoped> */
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+
+.ghost-shake {
+  animation: shake 1s infinite;
 }

@@ -52,14 +52,10 @@ import {
   DialogTitle,
 } from '@headlessui/vue'
 import { useWidgetStore } from '@/stores/widget'
-import { useProductStore } from '@/stores/products'
-import communLoading from './communLoading.vue'
 import { useI18n } from 'vue-i18n'
-import { Edit, Trash, TriangleAlert } from 'lucide-vue-next'
-import { ref, watch } from 'vue'
+import { TriangleAlert } from 'lucide-vue-next'
 
 const useWidget = useWidgetStore()
-const useProduct = useProductStore()
 const { t } = useI18n()
 const emits = defineEmits(['deleteItem'])
 

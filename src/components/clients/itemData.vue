@@ -5,14 +5,14 @@
         <div class="flex flex-col w-full overflow-hidden">
 
           <span class="truncate font-medium">{{ item.first_name ? item.first_name + ' ' + item.last_name : 'N/A'
-            }}</span>
+          }}</span>
           <span class="truncate text-xs">{{ item.username }}</span>
         </div>
       </div>
       <div class="flex shrink-0 overflow-hidden px-3 items-center h-full" :style="{ flex: `${divsWidths[1]} 0 0%` }">
         <div v-if="tab === 'contact'" class="flex flex-col w-full overflow-hidden">
           <span class="truncate">{{ item.region }}</span>
-          <span class="truncate text-xs">{{ city || 'N/A' }}</span>
+          <span class="truncate text-xs">{{ item.city || 'N/A' }}</span>
         </div>
 
 
@@ -45,7 +45,7 @@
         </div>
 
         <span v-else-if="tab === 'finance'" class="truncate font-medium">DZD {{ numberFormat(item.plafonnement)
-          }}</span>
+        }}</span>
 
 
         <span v-else-if="tab === 'legal'" class="truncate font-medium"> {{ item.nif || 'N/A' }}</span>

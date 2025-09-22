@@ -1,10 +1,14 @@
 <template>
   <div class="w-full transition-all duration-300 ease-in-out flex gap-1.5 items-center justify-between px-3 h-16">
-    <div class="flex flex-1 items-center gap-3">
+    <div v-if="route.name !== 'overview' && route.name !== 'coming-soon-view'" class="flex flex-1 items-center gap-3">
       <button @click="useWidget.openSide = !useWidget.openSide" class="btn-sm btn-square">
         <PanelLeft />
       </button>
       <breadcrumbs />
+    </div>
+    <div v-else class="flex flex-1 items-center gap-3">
+      <img v-if="useWidget.themeState === 'dark'" src="@/assets/logos/octaflow-full-white.svg" class="w-32" alt="">
+      <img v-else src="@/assets/logos/octaflow-full.svg" class="w-32" alt="">
     </div>
 
     <slot name="links"></slot>
@@ -28,8 +32,11 @@ import { useDark, useToggle, useStorage } from '@vueuse/core'
 import languageSwitcher from '../commun/languageSwitcher.vue';
 import breadcrumbs from './breadcrumbs.vue';
 import { onMounted, watch } from 'vue';
+import { useRoute } from 'vue-router';
+import { useAuthStore } from '@/stores/auth';
 
 const useWidget = useWidgetStore()
+const useAuth = useAuthStore()
 const isDark = useDark({
   selector: 'body',
   attribute: 'class',
@@ -38,6 +45,7 @@ const isDark = useDark({
   storageKey: 'user-theme', // Sauvegarde le choix de l'utilisateur
 })
 const toggleTheme = useToggle(isDark)
+const route = useRoute()
 
 onMounted(() => {
   useWidget.themeState = isDark.value ? 'dark' : 'light'

@@ -1,79 +1,40 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import productsRoutes from './products'
 import { useAuthStore } from '@/stores/auth'
 import administraitonRoutes from './administration'
-import receivablesRoutes from './receivables'
-import ordersRoutes from './orders'
+
+import modulesRoutes from './module'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/app',
       name: 'app',
       meta: { requireAuth: true },
       component: () => import('../views/mainPanel.vue'),
-      redirect: { name: 'dashboard-view' },
-      children: [
-        {
-          path: 'dashboard',
-          name: 'dashboard-view',
-          meta: {
-            hasSubLinks: false,
-            module: ['dashboard'],
-          },
-          component: () => import('../views/pages/dashboardView.vue'),
-        },
-        {
-          path: 'administration',
-          name: 'administration-view',
-          meta: {
-            module: ['administration'],
-          },
-          component: () => import('../views/pages/administrationView.vue'),
-          children: administraitonRoutes,
-        },
-        {
-          path: 'products',
-          name: 'products-view',
-          meta: {
-            hasSubLinks: false,
-          },
-          component: () => import('../views/pages/productsView.vue'),
-          redirect: { name: 'products-list-view' },
-          children: productsRoutes,
-        },
-        {
-          path: 'orders',
-          name: 'orders-view',
-          meta: {
-            hasSubLinks: false,
-            module: ['orders'],
-          },
-          component: () => import('../views/pages/ordersView.vue'),
-          redirect: { name: 'orders-list-view' },
-          children: ordersRoutes,
-        },
-        {
-          path: 'receivables',
-          name: 'receivables-view',
-          meta: {
-            module: ['receivables'],
-          },
-          component: () => import('../views/pages/receivablesView.vue'),
-          children: receivablesRoutes,
-          redirect: { name: 'receivables-bills-view' },
-        },
-      ],
+      children: modulesRoutes,
     },
     {
       path: '/login',
       name: 'login',
       component: () => import('../views/pages/loginView.vue'),
     },
+    {
+      path: '/',
+      name: 'overview',
+      meta: { requireAuth: true },
+      component: () => import('../views/overviewModule.vue'),
+    },
+    //coming-soon-view
+    {
+      path: '/coming-soon',
+      name: 'coming-soon-view',
+      component: () => import('../views/comingSoonView.vue'),
+    },
   ],
 })
 
+/**
 router.beforeEach(async (to, from, next) => {
   const useAuth = useAuthStore()
   try {
@@ -88,5 +49,5 @@ router.beforeEach(async (to, from, next) => {
     next(false)
   }
 })
-
+*/
 export default router

@@ -19,7 +19,7 @@
           <div class="w-4 h-9 flex justify-center ">
             <div class="w-px h-full bg-[var(--color-commun-border)] "></div>
           </div>
-          <router-link :to="{ name: item.name + '-' + sub.name + `-view` }" class="btn-sm flex-1 uppercase">{{
+          <router-link :to="{ name: sub.link }" class="btn-sm flex-1 uppercase">{{
             t(`translation.${sub.name}`) }}</router-link>
         </div>
       </div>

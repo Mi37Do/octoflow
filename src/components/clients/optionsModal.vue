@@ -79,7 +79,7 @@ const editItem = () => {
 
   useWidget.openClientOptions = false
 
-  router.push({ name: 'administration-editClient-view', params: { id: useAdministration.focusedUser.id } })
+  router.push({ name: 'administration-edit-client-view', params: { id: useAdministration.focusedUser.id } })
 }
 
 const deleteItem = () => {
