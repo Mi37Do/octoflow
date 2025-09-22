@@ -15,13 +15,13 @@ export const useMapStore = defineStore('map', () => {
   const zoomUpdated = (e) => {
     zoom.value = e
   }
-
+  /**
   const focusMarker = reactive({
     lat: 32.49094,
     lng: 3.67347,
     marker: new URL(`@/assets/images/defaultMarker.png`, import.meta.url).href,
     draggable: true
-  })
+  })*/
 
   const focusOnSearch = (lng, lat) => {
     focusMarker.lng = lng
@@ -38,6 +38,6 @@ export const useMapStore = defineStore('map', () => {
     zoomUpdated,
     focusOnSearch,
     loadingMap,
-    focusMarker
+    // focusMarker
   }
 })
